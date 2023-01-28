@@ -1,5 +1,5 @@
 
-Emrys Jenkins-Tyalor 
+Emrys Jenkins-Taylor 
 
 
 # :wave: The Basics of GitHub 
