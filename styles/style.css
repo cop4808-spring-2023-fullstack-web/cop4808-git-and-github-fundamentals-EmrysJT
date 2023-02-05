@@ -60,14 +60,7 @@ button {
 .operator:focus {
     background-color: #ffc183;
 }
-.newfunction {
-    font-weight: bold;
-    background-color: #fff530;    
-}
 
-.newfunction:focus {
-    background-color: #fcf79c;
-}
 .equals {
     background-color: #FF8F1F;
 }
@@ -114,4 +107,14 @@ button {
 
 .percent:active {
     background-color: rgb(123, 189, 255);
+}
+
+/* New function properties*/
+.newfunction {
+    font-weight: bold;
+    background-color: #fff530;    
+}
+
+.newfunction:active {
+    background-color: #fcf79c;
 }

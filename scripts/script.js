@@ -27,10 +27,16 @@ function clickButton() {
             if(buttons[i].classList.contains('operand')) {
                 inputOperand(buttons[i].value);
                 updateDisplay();
+            } else if(buttons[i].classList.contains('new1')) {
+                new1calc();
+            } else if(buttons[i].classList.contains('new2')) {
+                new2calc();
+            } else if(buttons[i].classList.contains('new3')) {
+                new3calc();
+            } else if(buttons[i].classList.contains('new4')) {
+                new4calc();
             } else if(buttons[i].classList.contains('operator')) {
                 inputOperator(buttons[i].value);
-            } else if(buttons[i].classList.contains('newfunction')) {
-                inputNewfunction1(buttons[i].value);
             } else if(buttons[i].classList.contains('equals')) {
                 inputEquals();
                 updateDisplay();
@@ -96,29 +102,7 @@ function inputOperator(operator) {
         firstOperand = displayValue;
     }
 }
-function inputNewfunction(newfunction) {
-    if(firstOperator == '**2' ) {
-        result = Number(firstOperand) **2
-        displayValue = roundAccurately(result, 15).toString();
-        firstOperand = displayValue;
-        result = null;
-    } else if(firstOperator == '**3' ) {
-        result = Number(firstOperand) **3
-        displayValue = roundAccurately(result, 15).toString();
-        firstOperand = displayValue;
-        result = null;
-    } else if(firstOperator == '10^' ) {
-        result = 10 ** Number(firstOperand)
-        displayValue = roundAccurately(result, 15).toString();
-        firstOperand = displayValue;
-        result = null;
-    } else if(firstOperator == '1/' ) {
-        result = 1 / Number(firstOperand)
-        displayValue = roundAccurately(result, 15).toString();
-        firstOperand = displayValue;
-        result = null;
-    } 
-}
+
 function inputEquals() {
     //hitting equals doesn't display undefined before operate()
     if(firstOperator === null) {
@@ -205,4 +189,30 @@ function operate(x, y, op) {
 
 function roundAccurately(num, places) {
     return parseFloat(Math.round(num + 'e' + places) + 'e-' + places);
+}
+
+
+// calculation for newly added functions
+function new1calc(){
+    result = Number(displayValue) ** 2;
+    displayValue = roundAccurately(result, 15).toString();
+    firstOperand = displayValue;
+}
+
+function new2calc(){
+    result = Number(displayValue) ** 3;
+    displayValue = roundAccurately(result, 15).toString();
+    firstOperand = displayValue;
+}
+
+function new3calc(){
+    result = 10 ** Number(displayValue);
+    displayValue = roundAccurately(result, 15).toString();
+    firstOperand = displayValue;
+}
+
+function new4calc(){
+    result = 1 / Number(displayValue);
+    displayValue = roundAccurately(result, 15).toString();
+    firstOperand = displayValue;
 }
