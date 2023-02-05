@@ -20,7 +20,7 @@ html {
     border-radius: 4px;
     display: grid;
     grid-template-columns: repeat(4, 100px);
-    grid-template-rows: minmax(100px, auto) repeat(5, 80px);
+    grid-template-rows: minmax(100px, auto) repeat(6, 80px);
     gap: 2px;
 }
 
@@ -60,7 +60,14 @@ button {
 .operator:focus {
     background-color: #ffc183;
 }
+.newfunction {
+    font-weight: bold;
+    background-color: #fff530;    
+}
 
+.newfunction:focus {
+    background-color: #fcf79c;
+}
 .equals {
     background-color: #FF8F1F;
 }

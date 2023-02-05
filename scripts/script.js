@@ -29,6 +29,8 @@ function clickButton() {
                 updateDisplay();
             } else if(buttons[i].classList.contains('operator')) {
                 inputOperator(buttons[i].value);
+            } else if(buttons[i].classList.contains('newfunction')) {
+                inputNewfunction1(buttons[i].value);
             } else if(buttons[i].classList.contains('equals')) {
                 inputEquals();
                 updateDisplay();
@@ -94,7 +96,29 @@ function inputOperator(operator) {
         firstOperand = displayValue;
     }
 }
-
+function inputNewfunction(newfunction) {
+    if(firstOperator == '**2' ) {
+        result = Number(firstOperand) **2
+        displayValue = roundAccurately(result, 15).toString();
+        firstOperand = displayValue;
+        result = null;
+    } else if(firstOperator == '**3' ) {
+        result = Number(firstOperand) **3
+        displayValue = roundAccurately(result, 15).toString();
+        firstOperand = displayValue;
+        result = null;
+    } else if(firstOperator == '10^' ) {
+        result = 10 ** Number(firstOperand)
+        displayValue = roundAccurately(result, 15).toString();
+        firstOperand = displayValue;
+        result = null;
+    } else if(firstOperator == '1/' ) {
+        result = 1 / Number(firstOperand)
+        displayValue = roundAccurately(result, 15).toString();
+        firstOperand = displayValue;
+        result = null;
+    } 
+}
 function inputEquals() {
     //hitting equals doesn't display undefined before operate()
     if(firstOperator === null) {
